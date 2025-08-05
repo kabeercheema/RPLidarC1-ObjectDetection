@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RTMapsDiagram version="4.8.0" EngineVersion="4.13" xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd">
+  <RequiredPackages>
+    <File Version="4.5.0"><![CDATA[C:/Program Files/Intempora/RTMaps 4/packages/rtmaps_python_bridge/rtmaps_python_bridge.pck]]><Relative><![CDATA[%RTMAPS_INSTDIR%/packages/rtmaps_python_bridge/rtmaps_python_bridge.pck]]></Relative></File>
+    <File Version="1.0.0"><![CDATA[C:/Users/kabee/OneDrive/Documents/UWAFT CAV/RPLidar/TestLidar.u/out/build/x64-Debug/TestLidar.pck]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/TestLidar.u/out/build/x64-Debug/TestLidar.pck]]></Relative></File>
+  </RequiredPackages>
+  <EngineProperties>
+    <Property LongName="Engine.startTimespeed" Type="1">1000</Property>
+    <Property LongName="Engine.startTime" Type="1">0</Property>
+    <Property LongName="Engine.session" Type="3"><![CDATA[unspecified]]></Property>
+    <Property LongName="Engine.recordingAtStart" Type="0">true</Property>
+    <Property LongName="Engine.recording" Type="0">true</Property>
+    <Property LongName="Engine.sequentialStart" Type="0">false</Property>
+    <Property LongName="Engine.shutdownTimeout" Type="1">10000000</Property>
+    <Property LongName="Engine.autoDetectStartTime" Type="0">true</Property>
+    <Property LongName="Engine.coreFunctionsToSaveInDiag" Type="4"><![CDATA[0|-1]]></Property>
+    <Property LongName="Engine.useUTCTimeReference" Type="0">false</Property>
+    <Property LongName="Engine.fastForwardThreshold" Type="1">2000</Property>
+    <Property LongName="Engine.fastRewindThreshold" Type="1">-2000</Property>
+    <Property LongName="Engine.priorityClass" Type="4"><![CDATA[3|0|Shared Time|Preemptive|Auto]]></Property>
+    <Property LongName="Engine.posixTimerThread" Type="4"><![CDATA[3|0|Auto|Timer Interval|Real Time Clock]]></Property>
+    <Property LongName="Engine.posixRealTimeClockIrqFrequency" Type="4"><![CDATA[4|0|1024|2048|4096|8192]]></Property>
+    <Property LongName="Engine.posixPreemptiveSchedulingPolicy" Type="4"><![CDATA[2|0|FIFO|Round Robin]]></Property>
+    <Property LongName="Engine.windowsUsePerformanceCounter" Type="0">true</Property>
+  </EngineProperties>
+  <ClocksManagement>
+    <Property LongName="ClocksManagement.activeClock" Type="4"><![CDATA[1|0|RTMaps_standard_clock]]></Property>
+  </ClocksManagement>
+  <Component InstanceName="Clustering" Model="PythonBridge" Version="4.5.0" x="288" y="384" z="0">
+    <Input LongName="Clustering.lidar" Name="lidar">
+      <Property LongName="Clustering.lidar.readerType" Type="1">0</Property>
+      <Property LongName="Clustering.lidar.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="Clustering.xy_points" Name="xy_points">
+      <Property LongName="Clustering.xy_points.subsampling" Type="1">1</Property>
+      <Property LongName="Clustering.xy_points.fifosize" Type="1">16</Property>
+      <Property LongName="Clustering.xy_points.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="Clustering.cluster_array" Name="cluster_array">
+      <Property LongName="Clustering.cluster_array.subsampling" Type="1">1</Property>
+      <Property LongName="Clustering.cluster_array.fifosize" Type="1">16</Property>
+      <Property LongName="Clustering.cluster_array.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="Clustering.width_bounds_array" Name="width_bounds_array">
+      <Property LongName="Clustering.width_bounds_array.subsampling" Type="1">1</Property>
+      <Property LongName="Clustering.width_bounds_array.fifosize" Type="1">16</Property>
+      <Property LongName="Clustering.width_bounds_array.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="Clustering.guard_begin" Type="0" SubType="128">true</Property>
+    <Property LongName="Clustering.internalInputs" Type="3" SubType="128"><![CDATA[lidar;11==]]></Property>
+    <Property LongName="Clustering.internalOutputs" Type="3" SubType="128"><![CDATA[xy_points;11==;4096#cluster_array;11==;128#width_bounds_array;11==;320]]></Property>
+    <Property LongName="Clustering.internalProperties" Type="3" SubType="128"><![CDATA[max_distance_mm||8||12000#dbscan_eps_mm||8||250#dbscan_min_samples||8||8]]></Property>
+    <ReadOnlyProperty LongName="Clustering.advance_begin_configuration" Type="3" SubType="256"><![CDATA[Advanced Configuration]]></ReadOnlyProperty>
+    <Property LongName="Clustering.deathBehavior" Type="4"><![CDATA[3|1|WAIT FOR PROCESS INDEFINITELY|KILL PROCESS AFTER TIMEOUT (5sec)|START ANOTHER PROCESS]]></Property>
+    <Property LongName="Clustering.capturePythonPrint" Type="0">true</Property>
+    <Property LongName="Clustering.useTCPOnly" Type="0">false</Property>
+    <ReadOnlyProperty LongName="Clustering.pythonPID" Type="1">142380</ReadOnlyProperty>
+    <Property LongName="Clustering.FileSHMSize" Type="1">15000000</Property>
+    <Property LongName="Clustering.useNuitka" Type="0">false</Property>
+    <Property LongName="Clustering.loadingTimeout" Type="1">8000000</Property>
+    <ReadOnlyProperty LongName="Clustering.advance_end_configuration" Type="0" SubType="512">false</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="Clustering.basic_begin_configuration" Type="3" SubType="256"><![CDATA[Basic Configuration]]></ReadOnlyProperty>
+    <Property LongName="Clustering.className" Type="3"><![CDATA[rtmaps_python]]></Property>
+    <Property LongName="Clustering.pythonExecutable" Type="3" SubType="16"><![CDATA[C:/Python311/python.exe]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../../../../../../Python311/python.exe]]></Relative></Property>
+    <Property LongName="Clustering.pythonFilename" Type="3" SubType="80"><![CDATA[C:/Users/kabee/OneDrive/Documents/UWAFT CAV/RPLidar/dbscancluster.py]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/dbscancluster.py]]></Relative></Property>
+    <Property LongName="Clustering.readingPolicy" Type="4"><![CDATA[5|1|Synchro|Reactive|Sampling|Triggered by First Input|Periodic Resampling Based on Timestamps]]></Property>
+    <Property LongName="Clustering.timeout" Type="1" SubType="1">-1</Property>
+    <Property LongName="Clustering.inputsBehavior" Type="4"><![CDATA[2|0|AllowEmptyInputs|Wait4AllInputs]]></Property>
+    <ReadOnlyProperty LongName="Clustering.basic_end_configuration" Type="0" SubType="512">true</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="Clustering.userSubsection" Type="3" SubType="256"><![CDATA[User Properties]]></ReadOnlyProperty>
+    <Property LongName="Clustering.max_distance_mm" Type="1">12000</Property>
+    <Property LongName="Clustering.dbscan_eps_mm" Type="1">250</Property>
+    <Property LongName="Clustering.dbscan_min_samples" Type="1">8</Property>
+    <Property LongName="Clustering.guard_end" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="Clustering.userSubsectionEnd" Type="0" SubType="512">true</ReadOnlyProperty>
+    <Property LongName="Clustering.threaded" Type="0">true</Property>
+    <Property LongName="Clustering.priority" Type="1">128</Property>
+    <Property LongName="Clustering.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="DataViewer_1" Model="DataViewer" Version="2.1.1" x="344" y="112" z="0">
+    <Input LongName="DataViewer_1.input_0" Name="input_0">
+      <Property LongName="DataViewer_1.input_0.readerType" Type="1">4</Property>
+      <Property LongName="DataViewer_1.input_0.subsampling" Type="1">1</Property>
+    </Input>
+    <Property LongName="DataViewer_1.begin_guard" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="DataViewer_1.widget_begin_config" Type="3" SubType="256"><![CDATA[General Configuration]]></ReadOnlyProperty>
+    <Property LongName="DataViewer_1.autoDirty" Type="0">true</Property>
+    <Property LongName="DataViewer_1.run" Type="0">true</Property>
+    <Property LongName="DataViewer_1.alwaysOnTop" Type="4"><![CDATA[4|0|Only at run time|Only at design time|No|Both at run time and design time]]></Property>
+    <Property LongName="DataViewer_1.moveable" Type="0">true</Property>
+    <Property LongName="DataViewer_1.hidden" Type="0">false</Property>
+    <Property LongName="DataViewer_1.title" Type="3"><![CDATA[]]></Property>
+    <Property LongName="DataViewer_1.x" Type="1">737</Property>
+    <Property LongName="DataViewer_1.y" Type="1">16</Property>
+    <Property LongName="DataViewer_1.width" Type="1">530</Property>
+    <Property LongName="DataViewer_1.height" Type="1">420</Property>
+    <Property LongName="DataViewer_1.end_guard" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="DataViewer_1.widget_end_config" Type="0" SubType="512">false</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="DataViewer_1.specific_begin_config" Type="3" SubType="256"><![CDATA[Specific Configuration]]></ReadOnlyProperty>
+    <Property LongName="DataViewer_1.nbInputs" Type="1">1</Property>
+    <Property LongName="DataViewer_1.compactMode" Type="0">false</Property>
+    <Property LongName="DataViewer_1.showInfo" Type="0">true</Property>
+    <Property LongName="DataViewer_1.showData" Type="0">true</Property>
+    <Property LongName="DataViewer_1.showPrettyTimestamp" Type="0">true</Property>
+    <Property LongName="DataViewer_1.float32Format" Type="3"><![CDATA[%9g]]></Property>
+    <Property LongName="DataViewer_1.float64Format" Type="3"><![CDATA[%9g]]></Property>
+    <Property LongName="DataViewer_1.integer8Format" Type="3"><![CDATA[%d]]></Property>
+    <Property LongName="DataViewer_1.integer16Format" Type="3"><![CDATA[%d]]></Property>
+    <Property LongName="DataViewer_1.integer32Format" Type="3"><![CDATA[%I32d]]></Property>
+    <Property LongName="DataViewer_1.integer64Format" Type="3"><![CDATA[%I64d]]></Property>
+    <Property LongName="DataViewer_1.unsignedInteger8Format" Type="3"><![CDATA[%u]]></Property>
+    <Property LongName="DataViewer_1.unsignedInteger16Format" Type="3"><![CDATA[%u]]></Property>
+    <Property LongName="DataViewer_1.unsignedInteger32Format" Type="3"><![CDATA[%I32u]]></Property>
+    <Property LongName="DataViewer_1.unsignedInteger64Format" Type="3"><![CDATA[%I64u]]></Property>
+    <Property LongName="DataViewer_1.hexDisplay" Type="0">false</Property>
+    <Property LongName="DataViewer_1.internalState" Type="3" SubType="128"><![CDATA[238;265]]></Property>
+    <Property LongName="DataViewer_1.expandedState" Type="3" SubType="128"><![CDATA[1|rplidar_objectdetector_1.pointsOut;0|Info:rplidar_objectdetector_1.pointsOut;1|Data:rplidar_objectdetector_1.pointsOut]]></Property>
+    <ReadOnlyProperty LongName="DataViewer_1.specific_end_config" Type="0" SubType="512">true</ReadOnlyProperty>
+    <Property LongName="DataViewer_1.threaded" Type="0">true</Property>
+    <Property LongName="DataViewer_1.priority" Type="1">128</Property>
+    <Property LongName="DataViewer_1.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="DataViewer_1_1" Model="DataViewer" Version="2.1.1" x="624" y="224" z="0">
+    <Input LongName="DataViewer_1_1.input_0" Name="input_0">
+      <Property LongName="DataViewer_1_1.input_0.readerType" Type="1">4</Property>
+      <Property LongName="DataViewer_1_1.input_0.subsampling" Type="1">1</Property>
+    </Input>
+    <Property LongName="DataViewer_1_1.begin_guard" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="DataViewer_1_1.widget_begin_config" Type="3" SubType="256"><![CDATA[General Configuration]]></ReadOnlyProperty>
+    <Property LongName="DataViewer_1_1.autoDirty" Type="0">true</Property>
+    <Property LongName="DataViewer_1_1.run" Type="0">true</Property>
+    <Property LongName="DataViewer_1_1.alwaysOnTop" Type="4"><![CDATA[4|0|Only at run time|Only at design time|No|Both at run time and design time]]></Property>
+    <Property LongName="DataViewer_1_1.moveable" Type="0">true</Property>
+    <Property LongName="DataViewer_1_1.hidden" Type="0">false</Property>
+    <Property LongName="DataViewer_1_1.title" Type="3"><![CDATA[]]></Property>
+    <Property LongName="DataViewer_1_1.x" Type="1">960</Property>
+    <Property LongName="DataViewer_1_1.y" Type="1">97</Property>
+    <Property LongName="DataViewer_1_1.width" Type="1">530</Property>
+    <Property LongName="DataViewer_1_1.height" Type="1">420</Property>
+    <Property LongName="DataViewer_1_1.end_guard" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="DataViewer_1_1.widget_end_config" Type="0" SubType="512">false</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="DataViewer_1_1.specific_begin_config" Type="3" SubType="256"><![CDATA[Specific Configuration]]></ReadOnlyProperty>
+    <Property LongName="DataViewer_1_1.nbInputs" Type="1">1</Property>
+    <Property LongName="DataViewer_1_1.compactMode" Type="0">false</Property>
+    <Property LongName="DataViewer_1_1.showInfo" Type="0">true</Property>
+    <Property LongName="DataViewer_1_1.showData" Type="0">true</Property>
+    <Property LongName="DataViewer_1_1.showPrettyTimestamp" Type="0">true</Property>
+    <Property LongName="DataViewer_1_1.float32Format" Type="3"><![CDATA[%9g]]></Property>
+    <Property LongName="DataViewer_1_1.float64Format" Type="3"><![CDATA[%9g]]></Property>
+    <Property LongName="DataViewer_1_1.integer8Format" Type="3"><![CDATA[%d]]></Property>
+    <Property LongName="DataViewer_1_1.integer16Format" Type="3"><![CDATA[%d]]></Property>
+    <Property LongName="DataViewer_1_1.integer32Format" Type="3"><![CDATA[%I32d]]></Property>
+    <Property LongName="DataViewer_1_1.integer64Format" Type="3"><![CDATA[%I64d]]></Property>
+    <Property LongName="DataViewer_1_1.unsignedInteger8Format" Type="3"><![CDATA[%u]]></Property>
+    <Property LongName="DataViewer_1_1.unsignedInteger16Format" Type="3"><![CDATA[%u]]></Property>
+    <Property LongName="DataViewer_1_1.unsignedInteger32Format" Type="3"><![CDATA[%I32u]]></Property>
+    <Property LongName="DataViewer_1_1.unsignedInteger64Format" Type="3"><![CDATA[%I64u]]></Property>
+    <Property LongName="DataViewer_1_1.hexDisplay" Type="0">false</Property>
+    <Property LongName="DataViewer_1_1.internalState" Type="3" SubType="128"><![CDATA[238;265]]></Property>
+    <Property LongName="DataViewer_1_1.expandedState" Type="3" SubType="128"><![CDATA[1|Clustering.cluster_array;0|Info:Clustering.cluster_array;1|Data:Clustering.cluster_array]]></Property>
+    <ReadOnlyProperty LongName="DataViewer_1_1.specific_end_config" Type="0" SubType="512">true</ReadOnlyProperty>
+    <Property LongName="DataViewer_1_1.threaded" Type="0">true</Property>
+    <Property LongName="DataViewer_1_1.priority" Type="1">128</Property>
+    <Property LongName="DataViewer_1_1.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="DataViewer_2" Model="DataViewer" Version="2.1.1" x="600" y="568" z="0">
+    <Input LongName="DataViewer_2.input_0" Name="input_0">
+      <Property LongName="DataViewer_2.input_0.readerType" Type="1">4</Property>
+      <Property LongName="DataViewer_2.input_0.subsampling" Type="1">1</Property>
+    </Input>
+    <Property LongName="DataViewer_2.begin_guard" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="DataViewer_2.widget_begin_config" Type="3" SubType="256"><![CDATA[General Configuration]]></ReadOnlyProperty>
+    <Property LongName="DataViewer_2.autoDirty" Type="0">true</Property>
+    <Property LongName="DataViewer_2.run" Type="0">true</Property>
+    <Property LongName="DataViewer_2.alwaysOnTop" Type="4"><![CDATA[4|0|Only at run time|Only at design time|No|Both at run time and design time]]></Property>
+    <Property LongName="DataViewer_2.moveable" Type="0">true</Property>
+    <Property LongName="DataViewer_2.hidden" Type="0">false</Property>
+    <Property LongName="DataViewer_2.title" Type="3"><![CDATA[]]></Property>
+    <Property LongName="DataViewer_2.x" Type="1">848</Property>
+    <Property LongName="DataViewer_2.y" Type="1">256</Property>
+    <Property LongName="DataViewer_2.width" Type="1">530</Property>
+    <Property LongName="DataViewer_2.height" Type="1">420</Property>
+    <Property LongName="DataViewer_2.end_guard" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="DataViewer_2.widget_end_config" Type="0" SubType="512">false</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="DataViewer_2.specific_begin_config" Type="3" SubType="256"><![CDATA[Specific Configuration]]></ReadOnlyProperty>
+    <Property LongName="DataViewer_2.nbInputs" Type="1">1</Property>
+    <Property LongName="DataViewer_2.compactMode" Type="0">false</Property>
+    <Property LongName="DataViewer_2.showInfo" Type="0">true</Property>
+    <Property LongName="DataViewer_2.showData" Type="0">true</Property>
+    <Property LongName="DataViewer_2.showPrettyTimestamp" Type="0">true</Property>
+    <Property LongName="DataViewer_2.float32Format" Type="3"><![CDATA[%9g]]></Property>
+    <Property LongName="DataViewer_2.float64Format" Type="3"><![CDATA[%9g]]></Property>
+    <Property LongName="DataViewer_2.integer8Format" Type="3"><![CDATA[%d]]></Property>
+    <Property LongName="DataViewer_2.integer16Format" Type="3"><![CDATA[%d]]></Property>
+    <Property LongName="DataViewer_2.integer32Format" Type="3"><![CDATA[%I32d]]></Property>
+    <Property LongName="DataViewer_2.integer64Format" Type="3"><![CDATA[%I64d]]></Property>
+    <Property LongName="DataViewer_2.unsignedInteger8Format" Type="3"><![CDATA[%u]]></Property>
+    <Property LongName="DataViewer_2.unsignedInteger16Format" Type="3"><![CDATA[%u]]></Property>
+    <Property LongName="DataViewer_2.unsignedInteger32Format" Type="3"><![CDATA[%I32u]]></Property>
+    <Property LongName="DataViewer_2.unsignedInteger64Format" Type="3"><![CDATA[%I64u]]></Property>
+    <Property LongName="DataViewer_2.hexDisplay" Type="0">false</Property>
+    <Property LongName="DataViewer_2.internalState" Type="3" SubType="128"><![CDATA[238;265]]></Property>
+    <Property LongName="DataViewer_2.expandedState" Type="3" SubType="128"><![CDATA[1|PythonBridge_1.bounds_out;0|Info:PythonBridge_1.bounds_out;1|Data:PythonBridge_1.bounds_out]]></Property>
+    <ReadOnlyProperty LongName="DataViewer_2.specific_end_config" Type="0" SubType="512">true</ReadOnlyProperty>
+    <Property LongName="DataViewer_2.threaded" Type="0">true</Property>
+    <Property LongName="DataViewer_2.priority" Type="1">128</Property>
+    <Property LongName="DataViewer_2.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="PythonBridge_1" Model="PythonBridge" Version="4.5.0" x="416" y="448" z="0">
+    <Input LongName="PythonBridge_1.clusters_in" Name="clusters_in">
+      <Property LongName="PythonBridge_1.clusters_in.readerType" Type="1">0</Property>
+      <Property LongName="PythonBridge_1.clusters_in.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="PythonBridge_1.bounds_in" Name="bounds_in">
+      <Property LongName="PythonBridge_1.bounds_in.readerType" Type="1">0</Property>
+      <Property LongName="PythonBridge_1.bounds_in.subsampling" Type="1">1</Property>
+    </Input>
+    <Output LongName="PythonBridge_1.clusters_out" Name="clusters_out">
+      <Property LongName="PythonBridge_1.clusters_out.subsampling" Type="1">1</Property>
+      <Property LongName="PythonBridge_1.clusters_out.fifosize" Type="1">16</Property>
+      <Property LongName="PythonBridge_1.clusters_out.periodic" Type="0">false</Property>
+    </Output>
+    <Output LongName="PythonBridge_1.bounds_out" Name="bounds_out">
+      <Property LongName="PythonBridge_1.bounds_out.subsampling" Type="1">1</Property>
+      <Property LongName="PythonBridge_1.bounds_out.fifosize" Type="1">16</Property>
+      <Property LongName="PythonBridge_1.bounds_out.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="PythonBridge_1.guard_begin" Type="0" SubType="128">true</Property>
+    <Property LongName="PythonBridge_1.internalInputs" Type="3" SubType="128"><![CDATA[clusters_in;11==#bounds_in;11==]]></Property>
+    <Property LongName="PythonBridge_1.internalOutputs" Type="3" SubType="128"><![CDATA[clusters_out;11==;128#bounds_out;11==;320]]></Property>
+    <Property LongName="PythonBridge_1.internalProperties" Type="3" SubType="128"><![CDATA[]]></Property>
+    <ReadOnlyProperty LongName="PythonBridge_1.advance_begin_configuration" Type="3" SubType="256"><![CDATA[Advanced Configuration]]></ReadOnlyProperty>
+    <Property LongName="PythonBridge_1.deathBehavior" Type="4"><![CDATA[3|1|WAIT FOR PROCESS INDEFINITELY|KILL PROCESS AFTER TIMEOUT (5sec)|START ANOTHER PROCESS]]></Property>
+    <Property LongName="PythonBridge_1.capturePythonPrint" Type="0">true</Property>
+    <Property LongName="PythonBridge_1.useTCPOnly" Type="0">false</Property>
+    <ReadOnlyProperty LongName="PythonBridge_1.pythonPID" Type="1">156964</ReadOnlyProperty>
+    <Property LongName="PythonBridge_1.FileSHMSize" Type="1">15000000</Property>
+    <Property LongName="PythonBridge_1.useNuitka" Type="0">false</Property>
+    <Property LongName="PythonBridge_1.loadingTimeout" Type="1">8000000</Property>
+    <ReadOnlyProperty LongName="PythonBridge_1.advance_end_configuration" Type="0" SubType="512">false</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="PythonBridge_1.basic_begin_configuration" Type="3" SubType="256"><![CDATA[Basic Configuration]]></ReadOnlyProperty>
+    <Property LongName="PythonBridge_1.className" Type="3"><![CDATA[rtmaps_python]]></Property>
+    <Property LongName="PythonBridge_1.pythonExecutable" Type="3" SubType="16"><![CDATA[C:/Python311/python.exe]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../../../../../../Python311/python.exe]]></Relative></Property>
+    <Property LongName="PythonBridge_1.pythonFilename" Type="3" SubType="80"><![CDATA[C:/Users/kabee/OneDrive/Documents/UWAFT CAV/RPLidar/objectmemory.py]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/objectmemory.py]]></Relative></Property>
+    <Property LongName="PythonBridge_1.readingPolicy" Type="4"><![CDATA[5|1|Synchro|Reactive|Sampling|Triggered by First Input|Periodic Resampling Based on Timestamps]]></Property>
+    <Property LongName="PythonBridge_1.timeout" Type="1" SubType="1">-1</Property>
+    <Property LongName="PythonBridge_1.inputsBehavior" Type="4"><![CDATA[2|0|AllowEmptyInputs|Wait4AllInputs]]></Property>
+    <ReadOnlyProperty LongName="PythonBridge_1.basic_end_configuration" Type="0" SubType="512">true</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="PythonBridge_1.userSubsection" Type="3" SubType="256"><![CDATA[User Properties]]></ReadOnlyProperty>
+    <Property LongName="PythonBridge_1.guard_end" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="PythonBridge_1.userSubsectionEnd" Type="0" SubType="512">true</ReadOnlyProperty>
+    <Property LongName="PythonBridge_1.threaded" Type="0">true</Property>
+    <Property LongName="PythonBridge_1.priority" Type="1">128</Property>
+    <Property LongName="PythonBridge_1.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="PythonBridge_2" Model="PythonBridge" Version="4.5.0" x="696" y="368" z="0">
+    <Input LongName="PythonBridge_2.clusters_in" Name="clusters_in">
+      <Property LongName="PythonBridge_2.clusters_in.readerType" Type="1">0</Property>
+      <Property LongName="PythonBridge_2.clusters_in.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="PythonBridge_2.bounds_in" Name="bounds_in">
+      <Property LongName="PythonBridge_2.bounds_in.readerType" Type="1">0</Property>
+      <Property LongName="PythonBridge_2.bounds_in.subsampling" Type="1">1</Property>
+    </Input>
+    <Input LongName="PythonBridge_2.points_in" Name="points_in">
+      <Property LongName="PythonBridge_2.points_in.readerType" Type="1">0</Property>
+      <Property LongName="PythonBridge_2.points_in.subsampling" Type="1">1</Property>
+    </Input>
+    <Property LongName="PythonBridge_2.guard_begin" Type="0" SubType="128">true</Property>
+    <Property LongName="PythonBridge_2.internalInputs" Type="3" SubType="128"><![CDATA[clusters_in;11==#bounds_in;11==#points_in;11==]]></Property>
+    <Property LongName="PythonBridge_2.internalOutputs" Type="3" SubType="128"><![CDATA[]]></Property>
+    <Property LongName="PythonBridge_2.internalProperties" Type="3" SubType="128"><![CDATA[]]></Property>
+    <ReadOnlyProperty LongName="PythonBridge_2.advance_begin_configuration" Type="3" SubType="256"><![CDATA[Advanced Configuration]]></ReadOnlyProperty>
+    <Property LongName="PythonBridge_2.deathBehavior" Type="4"><![CDATA[3|1|WAIT FOR PROCESS INDEFINITELY|KILL PROCESS AFTER TIMEOUT (5sec)|START ANOTHER PROCESS]]></Property>
+    <Property LongName="PythonBridge_2.capturePythonPrint" Type="0">true</Property>
+    <Property LongName="PythonBridge_2.useTCPOnly" Type="0">false</Property>
+    <ReadOnlyProperty LongName="PythonBridge_2.pythonPID" Type="1">85844</ReadOnlyProperty>
+    <Property LongName="PythonBridge_2.FileSHMSize" Type="1">15000000</Property>
+    <Property LongName="PythonBridge_2.useNuitka" Type="0">false</Property>
+    <Property LongName="PythonBridge_2.loadingTimeout" Type="1">8000000</Property>
+    <ReadOnlyProperty LongName="PythonBridge_2.advance_end_configuration" Type="0" SubType="512">false</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="PythonBridge_2.basic_begin_configuration" Type="3" SubType="256"><![CDATA[Basic Configuration]]></ReadOnlyProperty>
+    <Property LongName="PythonBridge_2.className" Type="3"><![CDATA[rtmaps_python]]></Property>
+    <Property LongName="PythonBridge_2.pythonExecutable" Type="3" SubType="16"><![CDATA[C:/Python311/python.exe]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../../../../../../Python311/python.exe]]></Relative></Property>
+    <Property LongName="PythonBridge_2.pythonFilename" Type="3" SubType="80"><![CDATA[C:/Users/kabee/OneDrive/Documents/UWAFT CAV/RPLidar/plotting.py]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/plotting.py]]></Relative></Property>
+    <Property LongName="PythonBridge_2.readingPolicy" Type="4"><![CDATA[5|1|Synchro|Reactive|Sampling|Triggered by First Input|Periodic Resampling Based on Timestamps]]></Property>
+    <Property LongName="PythonBridge_2.timeout" Type="1" SubType="1">-1</Property>
+    <Property LongName="PythonBridge_2.inputsBehavior" Type="4"><![CDATA[2|0|AllowEmptyInputs|Wait4AllInputs]]></Property>
+    <ReadOnlyProperty LongName="PythonBridge_2.basic_end_configuration" Type="0" SubType="512">true</ReadOnlyProperty>
+    <ReadOnlyProperty LongName="PythonBridge_2.userSubsection" Type="3" SubType="256"><![CDATA[User Properties]]></ReadOnlyProperty>
+    <Property LongName="PythonBridge_2.guard_end" Type="0" SubType="128">true</Property>
+    <ReadOnlyProperty LongName="PythonBridge_2.userSubsectionEnd" Type="0" SubType="512">true</ReadOnlyProperty>
+    <Property LongName="PythonBridge_2.threaded" Type="0">true</Property>
+    <Property LongName="PythonBridge_2.priority" Type="1">128</Property>
+    <Property LongName="PythonBridge_2.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="rplidar_objectdetector_1" Model="rplidar_objectdetector" Version="1.0.0" x="168" y="232" z="0">
+    <Output LongName="rplidar_objectdetector_1.pointsOut" Name="pointsOut">
+      <Property LongName="rplidar_objectdetector_1.pointsOut.subsampling" Type="1">1</Property>
+      <Property LongName="rplidar_objectdetector_1.pointsOut.fifosize" Type="1">16</Property>
+      <Property LongName="rplidar_objectdetector_1.pointsOut.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="rplidar_objectdetector_1.lidar_ip" Type="3"><![CDATA[192.168.1.200]]></Property>
+    <Property LongName="rplidar_objectdetector_1.lidar_port" Type="1">2000</Property>
+    <Property LongName="rplidar_objectdetector_1.threaded" Type="0">true</Property>
+    <Property LongName="rplidar_objectdetector_1.priority" Type="1">128</Property>
+    <Property LongName="rplidar_objectdetector_1.autoStart" Type="0">true</Property>
+  </Component>
+  <Connection Output="rplidar_objectdetector_1.pointsOut" Input="Clustering.lidar"/>
+  <Connection Output="rplidar_objectdetector_1.pointsOut" Input="DataViewer_1.input_0"/>
+  <Connection Output="Clustering.cluster_array" Input="DataViewer_1_1.input_0"/>
+  <Connection Output="PythonBridge_1.bounds_out" Input="DataViewer_2.input_0"/>
+  <Connection Output="Clustering.cluster_array" Input="PythonBridge_1.clusters_in"/>
+  <Connection Output="Clustering.width_bounds_array" Input="PythonBridge_1.bounds_in"/>
+  <Connection Output="PythonBridge_1.clusters_out" Input="PythonBridge_2.clusters_in"/>
+  <Connection Output="PythonBridge_1.bounds_out" Input="PythonBridge_2.bounds_in"/>
+  <Connection Output="Clustering.xy_points" Input="PythonBridge_2.points_in"/>
+  <RTBoardView ID="JavaStudio1.0">
+    <ComponentBox InstanceName="DataViewer_1_1" reversed="false">
+      <Description/>
+    </ComponentBox>
+    <ConnectionShape InstanceName="Clustering.lidar" color="0"/>
+    <ConnectionShape InstanceName="DataViewer_1.input_0" color="0"/>
+    <ConnectionShape InstanceName="DataViewer_1_1.input_0" color="0"/>
+    <ConnectionShape InstanceName="DataViewer_2.input_0" color="0"/>
+    <ConnectionShape InstanceName="PythonBridge_1.bounds_in" color="0"/>
+    <ConnectionShape InstanceName="PythonBridge_1.clusters_in" color="0"/>
+    <ConnectionShape InstanceName="PythonBridge_2.bounds_in" color="0"/>
+    <ConnectionShape InstanceName="PythonBridge_2.clusters_in" color="0"/>
+    <ConnectionShape InstanceName="PythonBridge_2.points_in" color="0"/>
+  </RTBoardView>
+</RTMapsDiagram>

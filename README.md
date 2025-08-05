@@ -93,5 +93,3 @@ The object detection pipeline consists of the following stages:
    - **Red X:** Detected object centroids
    - **Green lines:** Object width bounds with labels
 
-
-## Repository Structure

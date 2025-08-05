@@ -29,6 +29,7 @@ The system is designed for the **University of Waterloo's Alternative Fuels Team
   - Red X: Cluster centroids
   - Green lines: Width bounds
   - Axis ticks and labels for scale reference
+- Data filtered for 180 degrees as this is the intended use case for the sensor
 - Fully integrated with **RTMaps** for time-synchronized data pipelines
 - Built on [RPLidar SDK](https://github.com/Slamtec/rplidar_sdk) for robust hardware interfacing
 

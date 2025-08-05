@@ -4,7 +4,7 @@ Real-time object detection and width estimation using RPLidar C1 and clustering 
 ## Overview
 This project implements a **real-time object detection and width estimation system** using the **RPLidar C1 sensor** and **RTMaps**. It processes raw Lidar data to detect objects using **DBSCAN clustering**, calculates object widths, and visualizes results in real-time using **OpenCV**.
 
-The system is designed for the University of Waterloo's Alternative Fuels Team (UWAFT), which competes in the EcoCAR EV Challenge. A robust and fast object detection algorithm was essential, as this LiDAR acts as a supervisory model within the perception stack, validating and verifying objects that the stock sensors on the vehicle detect.
+The system is designed for the University of Waterloo's Alternative Fuels Team (UWAFT), which competes in the EcoCAR EV Challenge. A robust and fast object detection algorithm was essential, as this LiDAR acts as a supervisory module within the perception stack, validating and verifying objects that the stock sensors on the vehicle detect.
 
 ---
 
